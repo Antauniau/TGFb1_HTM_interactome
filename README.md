@@ -10,7 +10,7 @@ There are two steps :
 The options of this script need to be set in section 'dashboard' of this script.
 
 #2 plot networks and matrices : This is done by running script iact2network_github.r
-Once again the options can be set in section 'dashboard'. If one desires to plot a network in cytoscape then first cytoscape needs to be started.
+Once again the options can be set in section 'dashboard'. If one desires to plot a network in cytoscape then cytoscape needs to be started first.
 
 # more detailed description of script TGFb_miRNAGene_corr.r
 	• purpose : determine miR-gene interactions using both inverse foldchange and correlation
