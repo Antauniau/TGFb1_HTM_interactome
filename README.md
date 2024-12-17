@@ -26,7 +26,8 @@ Once again the options can be set in section 'dashboard'. If one desires to plot
 	• outputs :
 		○ iact.sel
 			§ files created with this script : 
-				□ /TGFb_interactome/tgfb1_n4_run2_deseq2/iact_sel_noCorrFilter
+				□ iact_sel_github.csv
+    				□ iact_sel_github.Rdata    
 			§ fields :
 				□ gene info
 				□ mir info including FC etc
@@ -39,14 +40,14 @@ Once again the options can be set in section 'dashboard'. If one desires to plot
 		○ also draw heatmap of the same interaction submatrix
 	• inputs : 
 		○ iact_sel
-			§ from : /TGFb_interactome/tgfb1_n4_run2_deseq2/iact_sel_noCorrFilter.Rdata
+			§ from : iact_sel_github
 		○ enrichr.gem
-			§ from : "/PXFG_paper/n4_deseq2_enrichr/results/enrichr.gem.Rdata"
+			§ from : "enrichr.gem.Rdata"
 		○ clusters.raw
-			§ from : "PXFG_paper/n4_deseq2_enrichr/EnrichmentMap3_new_gmt/results/AutoAnnotate - Summary Network default node.csv"
+			§ from : "AutoAnnotate - Summary Network default node.csv"
 	• method : 
-		○ select submatrix using enrichment results
-		○ using RCy3 control to cytoscape
+		○ select submatrix of total interaction matrix using enrichment results
+		○ using RCy3 control to cytoscape and automatically draw networks
 	• outputs : 
 		○ create cytoscape network
 		○ heatmap per 
@@ -59,15 +60,15 @@ Once again the options can be set in section 'dashboard'. If one desires to plot
 			§ fields :
 				□ miRNA, geneSymb
 				□ correlation
-				□ q
-				□ db binary vector ; db.sum
-				□ gene.and.mir.de
-				□ evidence.exper
-				□ score
+				□ q (=1-p_interaction)
+				□ db binary vector : interaction is in what databases ? ; db.sum
+				□ gene.and.mir.de : are gene and miR both FDR<0.05 ?
+				□ evidence.exper  : is there experimental evidence ?
+				□ score : interaction score
 				□ miRNA log2cpm
-				□ iact pval and padj
-				□ invFC y/n
-				□ q per database
-				□ gene info
-				□ miR info
+				□ iact pval and padj : interaction pval and FDR
+				□ invFC y/n : is there inversely correlated expression for this gene-miRNA pair ?
+				□ q per database (=1-p_interaction)
+				□ gene info : log2FC, log2CPM, FDR etc
+				□ miR info  :  ,,
 
